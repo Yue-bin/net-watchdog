@@ -1,0 +1,3 @@
+--[[
+    openwrt.lua - OpenWRT module.
+]]
