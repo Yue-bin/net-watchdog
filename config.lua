@@ -22,12 +22,14 @@ CONFIG.exit = function()
     return false
 end
 
--- 触发器
-CONFIG.trigger = function()
+-- 触发器list
+CONFIG.trigger = {}
+CONFIG.trigger[1] = function()
     return true
 end
 
--- 触发器触发的动作
-CONFIG.action = function()
-    print("triggered", os.date())
+-- 触发器触发的动作list,注意序号上与触发器对应
+CONFIG.action = {}
+CONFIG.action[1] = function()
+    print("trigged at " .. os.date())
 end

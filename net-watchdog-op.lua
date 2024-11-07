@@ -7,9 +7,12 @@ dofile("config.lua")
 
 -- 主循环
 while not CONFIG.exit() do
-    -- 如果触发器触发, 则执行动作
-    if CONFIG.trigger() then
-        CONFIG.action()
+    --遍历触发器list
+    for index, _ in ipairs(CONFIG.trigger) do
+        -- 如果触发器触发, 则执行动作
+        if CONFIG.trigger[index]() then
+            CONFIG.action[index]()
+        end
     end
     -- 等待一段时间
     CONFIG.sleep(CONFIG.interval)
