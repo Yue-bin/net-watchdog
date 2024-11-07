@@ -3,6 +3,9 @@
     本文件中的各种函数中可以调用从mods中require的模块的函数以实现各种模块化的功能
 ]]
 
+require("mods/common")
+--require("mods/openwrt")
+
 CONFIG = {}
 
 -- sleep的间隔, 单位秒
@@ -12,6 +15,7 @@ CONFIG.interval = 5
 CONFIG.sleep = function(seconds)
     os.execute("sleep " .. seconds)
 end
+-- CONFIG.sleep = openwrt.sleep
 
 -- 主循环的退出条件
 CONFIG.exit = function()
