@@ -3,7 +3,7 @@
 ]]
 
 -- 加载配置文件
-dofile("config.lua")
+dofile(arg[1] or "config.lua")
 
 -- 主循环
 while not CONFIG.exit() do
